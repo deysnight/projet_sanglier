@@ -11,31 +11,7 @@ namespace chasse_serv
     {
         protected static readonly string database = "test.db";
 
-        public static bool tableExist()
-        {
-            bool isExist = false;
-            using (var connection = new SQLiteConnection("" + new SQLiteConnectionStringBuilder { DataSource = database }))
-            {
-                connection.Open();
-                using (var transaction = connection.BeginTransaction())
-                {
-                    var selectCommand = connection.CreateCommand();
-                    selectCommand.Transaction = transaction;
-                    selectCommand.CommandText = "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'index'"; /// QUERY HERE
-                    using (var reader = selectCommand.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            isExist = true;
-                        }
-                    }
-                    transaction.Commit();
-                }
-            }
-            return (isExist);
-        }
-
-        public Object my_select()
+        public static Object my_select(string table, string value)
         {
             Object json;
             using (var connection = new SQLiteConnection("" + new SQLiteConnectionStringBuilder { DataSource = database }))
@@ -45,18 +21,26 @@ namespace chasse_serv
                 {
                     var selectCommand = connection.CreateCommand();
                     selectCommand.Transaction = transaction;
-                    selectCommand.CommandText = "SELECT * FROM \"index\""; /// QUERY HERE
+                    selectCommand.CommandText = "SELECT " + value + " FROM " + table; /// QUERY HERE
                     using (var reader = selectCommand.ExecuteReader())
                     {
-                        var items = new Dictionary<object, Dictionary<string, object>>();
+                        var items = new List<Dictionary<string, object>>();
                         while (reader.Read())
                         {
-                            var item = new Dictionary<string, object>(reader.FieldCount - 1);
+                            /*var item = new Dictionary<string, object>(reader.FieldCount - 1);
                             for (var i = 1; i < reader.FieldCount; i++)
                             {
                                 item[reader.GetName(i)] = reader.GetValue(i);
                             }
-                            items[reader.GetValue(0)] = item;
+                            items[reader.GetValue(0)] = item;*/
+
+
+                            var item = new Dictionary<string, object>(reader.FieldCount - 1);
+                            for (var i = 0; i < reader.FieldCount; i++)
+                            {
+                                item[reader.GetName(i)] = reader.GetValue(i);
+                            }
+                            items.Add(item);
                         }
                         var jsonstr = JsonConvert.SerializeObject(items, Formatting.Indented);
                         json = JsonConvert.DeserializeObject(jsonstr);
@@ -67,7 +51,7 @@ namespace chasse_serv
             return (json);
         }
 
-        public void my_insert()
+        public static void my_insert(string table, string champs, string values)
         {
             using (var connection = new SQLiteConnection("" + new SQLiteConnectionStringBuilder { DataSource = database }))
             {
@@ -76,7 +60,7 @@ namespace chasse_serv
                 {
                     var insertCommand = connection.CreateCommand();
                     insertCommand.Transaction = transaction;
-                    insertCommand.CommandText = "INSERT INTO \"index\" (nom) VALUES (\"bite2\"),(\"bite\");"; /// QUERY HERE
+                    insertCommand.CommandText = "INSERT INTO '" + table + "' (" + champs + ") VALUES (" + values + ");"; /// QUERY HERE
                     insertCommand.ExecuteNonQuery();
                     transaction.Commit();
                 }

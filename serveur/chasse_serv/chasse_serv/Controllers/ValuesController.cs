@@ -16,7 +16,6 @@ namespace chasse_serv.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            Console.Write(DBConnect.tableExist());
             return new string[] { "value1", "value2" };
         }
 
