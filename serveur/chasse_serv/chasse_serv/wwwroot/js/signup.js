@@ -88,30 +88,21 @@ $("#signup_button").click(function () {
     }
 
     var hash = EncryptPass(pass1);
-
-    var formData = username + ':' + email + ':' + hash;
-    var my_url_for_ip = Get_Path_For_IP();
-    var final_ip_redirect = my_url_for_ip + "/"
-    var final_ip_signup = my_url_for_ip + "/internal/signup/"
+    var formData = encodeURIComponent(btoa(username + ':' + email + ':' + hash, username));
 
    $.ajax(
     {
-        url: final_ip_signup + formData,
+        url: "internal/signup/" + formData,
         type: "get",
         async: false,
             success: function(response){
             if (response == "OK USER REGISTER") {
-                createCookie("login", username, 1000);
-                $("#error_signup_login").remove();
-                error_signup_login = 0;
-                $("#error_signup_mail").remove();
-                error_signup_mail = 0;
-                location.href = final_ip_redirect
+                location.reload();
             }
             else {
                 if (response == "KO LOGIN") {
                     if (error_signup_login < 1) {
-                       input = $('<p class="error_fade" id="error_signup_login">Ce nom de compte est déjà utilisé.</p>');
+                       input = $('<p class="error_fade" id="error_signup_login">Ce compte existe déjà.</p>');
                        input.insertAfter('.pass2_div');
                        input.hide();
                        input.fadeIn(1000);
@@ -122,23 +113,20 @@ $("#signup_button").click(function () {
                     $("#error_signup_login").remove();
                     error_signup_login = 0
                 }    
-                if (response == "KO MAIL") {
-                    if (error_signup_mail < 1) {
-                        input = $('<p class="error_fade" id="error_signup_mail">Cette adresse email est déjà utilisée.</p>');
-                        input.insertAfter('.pass2_div');
-                        input.hide();
-                        input.fadeIn(1000);
-                        error_signup_mail++;
-                    }
-                }
-                else {
-                    $("#error_signup_mail").remove();
-                    error_signup_mail = 0
-                }      
             }
         }
     })
 });
+
+function EncryptPass(pass1) {
+    var hash = 0, i, chr;
+    for (i = 0; i < pass1.length; i++) {
+        chr = pass1.charCodeAt(i);
+        hash = ((hash << 5) - hash) + chr;
+        hash |= 0;
+    }
+    return hash;
+}
 
 $("#signup_form").submit(function(e) {
     e.preventDefault();
