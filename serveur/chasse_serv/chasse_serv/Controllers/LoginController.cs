@@ -18,7 +18,7 @@ namespace chasse_serv.Controllers
         [HttpGet]
         public ActionResult<string> Login(string data)
         {
-            return data;
+            return "OK LOGIN";
         }
 
         [Route("internal/signup/{data}")]
@@ -34,8 +34,8 @@ namespace chasse_serv.Controllers
                 DBConnect.my_insert("users", "login, email, pwd", "'" + tmp[0] + "', '" + tmp[1] + "', '" + Utils.Encrypt(tmp[2]) + "'");
 
                 CookieOptions option = new CookieOptions();
-                //option.Expires = DateTime.Now.AddHours(6);
-                option.Expires = DateTime.Now.AddMinutes(1);
+                option.Expires = DateTime.Now.AddHours(6);
+                //option.Expires = DateTime.Now.AddMinutes(1);
                 Response.Cookies.Append("dot_user", tmp[0], option);
                 Response.Cookies.Append("logged_in", "true", option);
                 return "OK USER REGISTER";

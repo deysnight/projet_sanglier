@@ -27,14 +27,6 @@ namespace chasse_serv
                         var items = new List<Dictionary<string, object>>();
                         while (reader.Read())
                         {
-                            /*var item = new Dictionary<string, object>(reader.FieldCount - 1);
-                            for (var i = 1; i < reader.FieldCount; i++)
-                            {
-                                item[reader.GetName(i)] = reader.GetValue(i);
-                            }
-                            items[reader.GetValue(0)] = item;*/
-
-
                             var item = new Dictionary<string, object>(reader.FieldCount - 1);
                             for (var i = 0; i < reader.FieldCount; i++)
                             {

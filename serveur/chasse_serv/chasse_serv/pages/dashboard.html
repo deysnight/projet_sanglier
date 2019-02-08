@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Dashboard</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link href="/css/material-dashboard.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <div class="sidebar" data-color="purple" data-background-color="white">
+        <!--
+            Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+            Tip 2: you can also add an image using data-image tag
+        -->
+        <div class="logo">
+            <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+                Creative Tim
+            </a>
+        </div>
+        <div class="sidebar-wrapper">
+            <ul class="nav">
+                <li class="nav-item active  ">
+                    <a class="nav-link" href="./dashboard.html">
+                        <i class="material-icons">dashboard</i>
+                        <p>dashboard</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="./user.html">
+                        <i class="material-icons">person</i>
+                        <p>panel2</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="./tables.html">
+                        <i class="material-icons">content_paste</i>
+                        <p>panel3</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="./typography.html">
+                        <i class="material-icons">library_books</i>
+                        <p>panel4</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="./icons.html">
+                        <i class="material-icons">bubble_chart</i>
+                        <p>panel5</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="./map.html">
+                        <i class="material-icons">location_ons</i>
+                        <p>Historique</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="./notifications.html">
+                        <i class="material-icons">notifications</i>
+                        <p>Paramètres</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="./rtl.html">
+                        <i class="material-icons">language</i>
+                        <p>Se deconnecter</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-panel">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top" id="navbar-top">
+            <div class="container-fluid">
+                <div class="navbar-wrapper">
+                    <a class="navbar-brand" href="#pablo">Dashboard</a>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="navbar-toggler-icon icon-bar"></span>
+                    <span class="navbar-toggler-icon icon-bar"></span>
+                    <span class="navbar-toggler-icon icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end">
+                    <span class="navbar-nav">text acca par exemple</span>
+                </div>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+        <div class="content">
+            <div>
+                <div style="display: flex;">
+                    <div class="col-md-4">
+                        <div class="card card-chart">
+                            <div class="card-header card-header-success" style="padding: 0;">
+                                <img src="/test_map_thumb.png" style="width: 100%; border-radius: 3px; margin: 0;"/>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">Daily Sales</h4>
+                                <p class="card-category">
+                                    <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons">access_time</i> updated 4 minutes ago
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="flex: auto; width: 25%;">lol2</div>
+                    <div style="flex: auto; width: 25%;">lol3</div>
+                </div>
+            </div>
+            <div>
+                <div style="display: flex;">
+                    <div style="flex: auto;">lol1</div>
+                    <div style="flex: auto;">lol2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <script src="/js/dashboard.js"></script>
+</body>
+</html>

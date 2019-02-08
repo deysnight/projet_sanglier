@@ -26,3 +26,17 @@ C:\Users\user-louison\Documents\projet_sanglier\serveur\chasse_serv\chasse_serv\
 C:\Users\user-louison\Documents\projet_sanglier\serveur\chasse_serv\chasse_serv\obj\Debug\netcoreapp2.1\chasse_serv.RazorTargetAssemblyInfo.cache
 C:\Users\user-louison\Documents\projet_sanglier\serveur\chasse_serv\chasse_serv\obj\Debug\netcoreapp2.1\chasse_serv.dll
 C:\Users\user-louison\Documents\projet_sanglier\serveur\chasse_serv\chasse_serv\obj\Debug\netcoreapp2.1\chasse_serv.pdb
+E:\Documents\repo_git\projet_sanglier\serveur\chasse_serv\chasse_serv\bin\Debug\netcoreapp2.1\chasse_serv.deps.json
+E:\Documents\repo_git\projet_sanglier\serveur\chasse_serv\chasse_serv\bin\Debug\netcoreapp2.1\chasse_serv.runtimeconfig.json
+E:\Documents\repo_git\projet_sanglier\serveur\chasse_serv\chasse_serv\bin\Debug\netcoreapp2.1\chasse_serv.runtimeconfig.dev.json
+E:\Documents\repo_git\projet_sanglier\serveur\chasse_serv\chasse_serv\bin\Debug\netcoreapp2.1\chasse_serv.dll
+E:\Documents\repo_git\projet_sanglier\serveur\chasse_serv\chasse_serv\bin\Debug\netcoreapp2.1\chasse_serv.pdb
+E:\Documents\repo_git\projet_sanglier\serveur\chasse_serv\chasse_serv\obj\Debug\netcoreapp2.1\chasse_serv.csprojAssemblyReference.cache
+E:\Documents\repo_git\projet_sanglier\serveur\chasse_serv\chasse_serv\obj\Debug\netcoreapp2.1\chasse_serv.csproj.CoreCompileInputs.cache
+E:\Documents\repo_git\projet_sanglier\serveur\chasse_serv\chasse_serv\obj\Debug\netcoreapp2.1\chasse_serv.RazorAssemblyInfo.cache
+E:\Documents\repo_git\projet_sanglier\serveur\chasse_serv\chasse_serv\obj\Debug\netcoreapp2.1\chasse_serv.RazorAssemblyInfo.cs
+E:\Documents\repo_git\projet_sanglier\serveur\chasse_serv\chasse_serv\obj\Debug\netcoreapp2.1\chasse_serv.AssemblyInfoInputs.cache
+E:\Documents\repo_git\projet_sanglier\serveur\chasse_serv\chasse_serv\obj\Debug\netcoreapp2.1\chasse_serv.AssemblyInfo.cs
+E:\Documents\repo_git\projet_sanglier\serveur\chasse_serv\chasse_serv\obj\Debug\netcoreapp2.1\chasse_serv.RazorTargetAssemblyInfo.cache
+E:\Documents\repo_git\projet_sanglier\serveur\chasse_serv\chasse_serv\obj\Debug\netcoreapp2.1\chasse_serv.dll
+E:\Documents\repo_git\projet_sanglier\serveur\chasse_serv\chasse_serv\obj\Debug\netcoreapp2.1\chasse_serv.pdb

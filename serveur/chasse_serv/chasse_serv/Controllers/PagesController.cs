@@ -20,7 +20,7 @@ namespace chasse_serv.Controllers
             if (Utils.user_logged(Request) != true)
                 Response.Redirect("/login");
             else
-                return "lol";
+                return Utils.Retrive_file("dashboard.html", "text/html", "pages");
             return "";
         }
 
@@ -44,6 +44,18 @@ namespace chasse_serv.Controllers
             else
                 return Utils.Retrive_file("signup.html", "text/html", "pages");
             return "";
+        }
+
+        //test route
+        [Route("test")]
+        [HttpGet]
+        public ActionResult<string> test()
+        {
+            /*if (Utils.user_logged(Request) == true)
+                Response.Redirect("/");
+            else*/
+                return Utils.Retrive_file("dashboard_temp.html", "text/html", "pages");
+            //return "";
         }
     }
 }
