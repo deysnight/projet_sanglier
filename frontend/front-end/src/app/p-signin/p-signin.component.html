@@ -1,0 +1,20 @@
+<div id="glob">
+  <div id="wrap01">
+      <h2>Se connecter</h2>
+  </div>
+  <div id="wrap-form">
+      <div id="container-form">
+          <form id="login_form" [formGroup]="form">
+            <mat-form-field class="button-log-full-width">
+                <input matInput placeholder="Nom d'utilisateur" formControlName="username" name="username" required>
+              </mat-form-field>
+              <mat-form-field class="button-log-full-width">
+                <input matInput placeholder="Mot de passe" formControlName="password" type="password" name="password" required>
+              </mat-form-field>
+              <app-autocomplete-acca #acca [accavalue]>loading</app-autocomplete-acca>
+              <button  mat-stroked-button (click)="login()">Se connecter</button >
+              
+          </form>
+      </div>
+  </div>
+</div>

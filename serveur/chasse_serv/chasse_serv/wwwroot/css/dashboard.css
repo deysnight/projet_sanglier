@@ -12,3 +12,8 @@ body {
 #navbar-top {
     background-color: #a8a8a8 !important;
 }
+
+.col-md-4 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
